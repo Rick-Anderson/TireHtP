@@ -18,25 +18,37 @@ namespace TireHtP.Pages.TireHt
             _context = context;
         }
 
+        [BindProperty]
+        public Tire Tire { get; set; }
+
         public IActionResult OnGet()
+        {
+            Tire = new Tire
+            {
+                Height = 38.0,
+                Width = 14.5
+            };
+            return Page();
+    }
+
+
+
+    public async Task<IActionResult> OnPostAsync()
+    {
+
+            //Tire = new Tire {
+            //    Height = 38.0,
+            //    Width = 14.5 };
+
+        if (!ModelState.IsValid)
         {
             return Page();
         }
 
-        [BindProperty]
-        public Tire Tire { get; set; }
+        _context.Tire.Add(Tire);
+        await _context.SaveChangesAsync();
 
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Tire.Add(Tire);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
-        }
+        return RedirectToPage("./Index");
     }
+}
 }

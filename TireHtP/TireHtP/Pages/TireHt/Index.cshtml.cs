@@ -21,11 +21,7 @@ namespace TireHtP.Pages.TireHt
         public async Task OnGetAsync()
         {
             var name = GetSessionID();
-            //var name = HttpContext.Session.GetString(SessionKeyName);
-            //if (string.IsNullOrEmpty(name))
-            //{
-            //    HttpContext.Session.SetString(SessionKeyName, Guid.NewGuid().ToString());
-            //}
+
 
             Tire = await _context.Tire.ToListAsync();
         }
