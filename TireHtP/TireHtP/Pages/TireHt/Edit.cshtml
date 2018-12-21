@@ -14,6 +14,8 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Tire.Id" />
+            <input type="hidden" asp-for="Tire.SessionID" />
+
             <div class="form-group">
                 <label asp-for="Tire.Height" class="control-label"></label>
                 <input asp-for="Tire.Height" class="form-control" />

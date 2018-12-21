@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TireHtP.Models;
 
@@ -16,14 +17,46 @@ namespace TireHtP.Pages.TireHt
             _context = context;
         }
 
-        public IList<Tire> Tire { get;set; }
+        public IList<Tire> Tire { get; set; }
 
         public async Task OnGetAsync()
         {
-            var name = GetSessionID();
+            var sessionID = GetSessionID();
 
+            var tires = from t in _context.Tire
+                        where t.SessionID == sessionID
+                        select t;
 
-            Tire = await _context.Tire.ToListAsync();
+            if (tires.Count() == 0)
+            {
+                AddTires();
+            }
+
+            Tire = await tires.ToListAsync();            
+        }
+
+        private void AddTires()
+        {
+            var tires = new Tire[]
+            {
+                new Tire {
+                    Height = 37.0,
+                    Width = 14.5,
+                    SessionID = GetSessionID()
+                },
+                new Tire {
+                    Height = 37.8,
+                    Width = 13.6,
+                    SessionID = GetSessionID()
+                }
+            };
+
+            foreach (Tire t in tires)
+            {
+                _context.Tire.Add(t);
+            }
+
+            _context.SaveChanges();
         }
     }
 }

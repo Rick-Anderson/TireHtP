@@ -26,23 +26,80 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Tire) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Height)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Width)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sidewall)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Tire)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Height)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Width)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sidewall)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<h2> Tire Height vs. PSI </h2>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>PSI</th>
+
+            @foreach (var item in Model.Tire)
+            {
+                 var maxHt = item.Height / 2.0; 
+            <th>
+                @item.Height X @item.Width (Max: @maxHt )
+            </th>
+
+
+            }
+        </tr>
+    </thead>
+
+    <tbody>
+
+
+        @{ double psi = 36.0;
+
+            while (psi > 1)
+            {
+
+                <tr>
+
+                    <td>
+                        @psi
+                    </td>
+                    @foreach (var item in Model.Tire)
+                    {
+
+                    <td>
+                        @{
+                            double weight = 1000.0;
+                            var b = weight / psi / item.Width / 2.0;
+                            var lift = Math.Round(Math.Sqrt(item.Height * item.Height/4.0 - b * b),2);
+                        }
+                        @lift 
+                    </td>
+
+                            }
+                </tr>
+                psi = psi - 1.0;
+            }
+        }
+    </tbody>
+
+</table>
+
+

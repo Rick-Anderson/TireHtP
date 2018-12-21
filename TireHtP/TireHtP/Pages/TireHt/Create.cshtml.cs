@@ -9,7 +9,7 @@ using TireHtP.Models;
 
 namespace TireHtP.Pages.TireHt
 {
-    public class CreateModel : PageModel
+    public class CreateModel : TireBaseModel
     {
         private readonly TireHtP.Models.TireHtPContext _context;
 
@@ -36,16 +36,13 @@ namespace TireHtP.Pages.TireHt
     public async Task<IActionResult> OnPostAsync()
     {
 
-            //Tire = new Tire {
-            //    Height = 38.0,
-            //    Width = 14.5 };
-
         if (!ModelState.IsValid)
         {
             return Page();
         }
+        Tire.SessionID = GetSessionID();
 
-        _context.Tire.Add(Tire);
+            _context.Tire.Add(Tire);
         await _context.SaveChangesAsync();
 
         return RedirectToPage("./Index");
