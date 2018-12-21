@@ -20,6 +20,11 @@ namespace TireHtP.Pages.TireHt
             return HttpContext.Session.GetString(SessionKeyName);
         }
 
+        public string GetSessionKey()
+        {
+            return HttpContext.Session.GetString(SessionKeyName);
+        }
+
         public double Lift(double radius, double psi, double width, double weight)
         {
             var b = weight / psi / width / 2.0;

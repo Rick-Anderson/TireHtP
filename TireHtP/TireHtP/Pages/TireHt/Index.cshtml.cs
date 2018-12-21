@@ -18,6 +18,8 @@ namespace TireHtP.Pages.TireHt
         }
 
         public IList<Tire> Tire { get; set; }
+        public int TotalRecords { get; set; }
+        public string SessionKey { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -32,7 +34,10 @@ namespace TireHtP.Pages.TireHt
                 AddTires();
             }
 
-            Tire = await tires.ToListAsync();            
+            Tire = await tires.ToListAsync();
+
+            TotalRecords = _context.Tire.Count();
+            SessionKey = GetSessionKey();
         }
 
         private void AddTires()
