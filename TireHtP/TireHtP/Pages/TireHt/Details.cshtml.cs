@@ -19,7 +19,6 @@ namespace TireHtP.Pages.TireHt
         }
 
         public Tire Tire { get; set; }
-        public double Ht { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -27,8 +26,6 @@ namespace TireHtP.Pages.TireHt
             {
                 return NotFound();
             }
-
-            Ht = 3.14159;
 
             Tire = await _context.Tire.FirstOrDefaultAsync(m => m.Id == id);
 

@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Tire drop vs. Pressure</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -18,9 +18,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Tire[0].Width)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tire[0].Sidewall)
             </th>
             <th></th>
         </tr>
@@ -36,9 +33,6 @@
                     @Html.DisplayFor(modelItem => item.Width)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Sidewall)
-                </td>
-                <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
@@ -48,7 +42,7 @@
     </tbody>
 </table>
 
-<h2> Tire Height vs. PSI </h2>
+<h2> Axle Height vs. PSI </h2>
 
 <table class="table">
 
@@ -58,12 +52,10 @@
 
             @foreach (var item in Model.Tire)
             {
-                 var maxHt = item.Height / 2.0; 
-            <th>
-                @item.Height X @item.Width (Max: @maxHt )
-            </th>
-
-
+                var maxHt = item.Height / 2.0;
+                <th>
+                    @item.Height X @item.Width (Static:Dynamic)
+                </th>
             }
         </tr>
     </thead>
@@ -84,16 +76,20 @@
                     @foreach (var item in Model.Tire)
                     {
 
-                    <td>
-                        @{
-                            double weight = 1000.0;
-                            var b = weight / psi / item.Width / 2.0;
-                            var lift = Math.Round(Math.Sqrt(item.Height * item.Height/4.0 - b * b),2);
-                        }
-                        @lift 
-                    </td>
+                        <td>
+                            @{
+                                double weight = 1000.0;
+                                var b = weight / psi / item.Width / 2.0;
+                                var lift = Math.Round(Math.Sqrt(item.Height * item.Height / 4.0 - b * b), 2);
+                                var diff = Math.Round(item.Height / 2.0 - lift, 2);
 
+                                var slift = Math.Round(Math.Sqrt(item.Height * item.Height / 4.0 - b * b * 9), 2);
+                                var sdiff = Math.Round(item.Height / 2.0 - slift, 2);
                             }
+                            @lift (@diff) : @slift (@sdiff)
+                        </td>
+
+                    }
                 </tr>
                 psi = psi - 1.0;
             }

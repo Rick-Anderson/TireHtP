@@ -45,6 +45,11 @@ namespace TireHtP.Pages.TireHt
                     SessionID = GetSessionID()
                 },
                 new Tire {
+                    Height = 37.0,
+                    Width = 12.5,
+                    SessionID = GetSessionID()
+                },
+                new Tire {
                     Height = 37.8,
                     Width = 13.6,
                     SessionID = GetSessionID()

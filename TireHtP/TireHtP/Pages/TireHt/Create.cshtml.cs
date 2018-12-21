@@ -25,8 +25,8 @@ namespace TireHtP.Pages.TireHt
         {
             Tire = new Tire
             {
-                Height = 38.0,
-                Width = 14.5
+                Height = 35.0,
+                Width = 12.5
             };
             return Page();
     }
