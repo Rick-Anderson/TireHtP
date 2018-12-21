@@ -19,7 +19,8 @@ namespace TireHtP.Pages.TireHt
 
         public IList<Tire> Tire { get; set; }
         public int TotalRecords { get; set; }
-        public string SessionKey { get; set; }
+        // TODO remove after debugging
+        public string SessionID { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -37,7 +38,7 @@ namespace TireHtP.Pages.TireHt
             Tire = await tires.ToListAsync();
 
             TotalRecords = _context.Tire.Count();
-            SessionKey = GetSessionKey();
+            SessionID = GetSessionID();
         }
 
         private void AddTires()

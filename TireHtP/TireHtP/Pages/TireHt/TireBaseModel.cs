@@ -16,19 +16,10 @@ namespace TireHtP.Pages.TireHt
             if (string.IsNullOrEmpty(name))
             {
                 HttpContext.Session.SetString(SessionKeyName, Guid.NewGuid().ToString());
+                name = HttpContext.Session.GetString(SessionKeyName);
             }
-            return HttpContext.Session.GetString(SessionKeyName);
+            return name;
         }
 
-        public string GetSessionKey()
-        {
-            return HttpContext.Session.GetString(SessionKeyName);
-        }
-
-        public double Lift(double radius, double psi, double width, double weight)
-        {
-            var b = weight / psi / width / 2.0;
-            return Math.Sqrt(radius * radius - b * b);
-        }
     }
 }
