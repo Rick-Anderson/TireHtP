@@ -7,8 +7,6 @@
 
 <h1>Tire drop vs. Pressure</h1>
 
-<p> Total recoreds = @Model.TotalRecords</p>
-<p> Session Key : @Model.SessionID  </p>
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -45,6 +43,7 @@
 </table>
 
 <h2> Axle Height vs. PSI </h2>
+<h3> static lift (drop): Dynamic lift (drop)</h3>
 
 <table class="table">
 
@@ -65,11 +64,11 @@
     <tbody>
 
 
-        @{ double psi = 36.0;
+        @{  double psi = Model.Tire[0].MaxPSI;
+            double diff = 0.0;
 
             while (psi > 1)
             {
-
                 <tr>
 
                     <td>
@@ -80,20 +79,35 @@
 
                         <td>
                             @{
-                                double weight = 1000.0;
-                                var b = weight / psi / item.Width / 2.0;
+                                var b = item.Weight / psi / item.Width / 2.0;
                                 var lift = Math.Round(Math.Sqrt(item.Height * item.Height / 4.0 - b * b), 2);
-                                var diff = Math.Round(item.Height / 2.0 - lift, 2);
+                                diff = Math.Round(item.Height / 2.0 - lift, 2);
 
-                                var slift = Math.Round(Math.Sqrt(item.Height * item.Height / 4.0 - b * b * 9), 2);
-                                var sdiff = Math.Round(item.Height / 2.0 - slift, 2);
+                                // dynLift use 3 times static weight. 3*3 == 9;
+                                var dynLift = Math.Round(Math.Sqrt(item.Height * item.Height / 4.0 - b * b * 9), 2);
+                                var dynDiff = Math.Round(item.Height / 2.0 - dynLift, 2);
+                                string str_dynDiff = dynDiff.ToString();
+                                string str_dynLift = (dynLift > (item.WheelDiameter / 2.0 - .5) || dynLift.ToString().Equals("NaN") != true)
+                                    ? dynLift.ToString() : "Rim";
+
+                                if (str_dynLift.Equals("Rim"))
+                                {
+                                    str_dynDiff = "X";
+                                }
                             }
-                            @lift (@diff) : @slift (@sdiff)
+                            @lift (@diff) : @str_dynLift (@str_dynDiff)
                         </td>
 
                     }
                 </tr>
-                psi = psi - 1.0;
+                if (@diff < .1)
+                {
+                    psi -= 3.0;
+                }
+                else
+                {
+                    psi -= 1.0;
+                }
             }
         }
     </tbody>

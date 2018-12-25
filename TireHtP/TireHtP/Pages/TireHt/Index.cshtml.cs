@@ -18,9 +18,6 @@ namespace TireHtP.Pages.TireHt
         }
 
         public IList<Tire> Tire { get; set; }
-        public int TotalRecords { get; set; }
-        // TODO remove after debugging
-        public string SessionID { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -36,9 +33,6 @@ namespace TireHtP.Pages.TireHt
             }
 
             Tire = await tires.ToListAsync();
-
-            TotalRecords = _context.Tire.Count();
-            SessionID = GetSessionID();
         }
 
         private void AddTires()
@@ -46,20 +40,31 @@ namespace TireHtP.Pages.TireHt
             var tires = new Tire[]
             {
                 new Tire {
+                    Model = "Toyo Open Country",
                     Height = 37.0,
                     Width = 14.5,
+                    WheelDiameter = 17.0,
+                    MaxPSI=36,
+                    Weight = 1110,
                     SessionID = GetSessionID()
                 },
-                new Tire {
-                    Height = 37.0,
+                new Tire {             
+                    Model = "KO2",
+                    Height = 36.5,
                     Width = 12.5,
-                    SessionID = GetSessionID()
-                },
-                new Tire {
-                    Height = 37.8,
-                    Width = 13.6,
+                    WheelDiameter = 17.0,
+                    MaxPSI=36.0,
+                    Weight = 1110,
                     SessionID = GetSessionID()
                 }
+                //,
+                //new Tire {
+                //    Height = 37.8,
+                //    Width = 13.6,
+                //    WheelDiameter = 17.0,
+                //    MaxPSI=36.0,
+                //    SessionID = GetSessionID()
+                //}
             };
 
             foreach (Tire t in tires)
