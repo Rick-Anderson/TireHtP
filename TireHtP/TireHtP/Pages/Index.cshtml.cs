@@ -41,7 +41,7 @@ namespace TireHtP.Pages
             var tires = new Tire[]
             {
                 new Tire {
-                    Model = "Toyo Open Country",
+                    Model = "Toyo OC",
                     Height = 37.0,
                     Width = 14.5,
                     WheelDiameter = 17.0,
@@ -49,15 +49,25 @@ namespace TireHtP.Pages
                     Weight = 1110,
                     SessionID = GetSessionID()
                 },
-                new Tire {
-                    Model = "KO2",
-                    Height = 36.5,
+                 new Tire {
+                    Model = "Generic",
+                    Height = 37,
                     Width = 12.5,
                     WheelDiameter = 17.0,
                     MaxPSI=36.0,
                     Weight = 1110,
                     SessionID = GetSessionID()
                 }
+                // ,
+                //new Tire {
+                //    Model = "KO2",
+                //    Height = 36.5,
+                //    Width = 12.5,
+                //    WheelDiameter = 17.0,
+                //    MaxPSI=36.0,
+                //    Weight = 1110,
+                //    SessionID = GetSessionID()
+                //}
                 //,
                 //new Tire {
                 //    Height = 37.8,
