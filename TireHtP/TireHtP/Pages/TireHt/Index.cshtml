@@ -14,10 +14,22 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Tire[0].Model)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Tire[0].Height)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Tire[0].Width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tire[0].Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tire[0].WheelDiameter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tire[0].MaxPSI)
             </th>
             <th></th>
         </tr>
@@ -27,10 +39,22 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Height)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Width)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WheelDiameter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxPSI)
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
@@ -64,7 +88,7 @@
     <tbody>
 
 
-        @{  double psi = Model.Tire[0].MaxPSI;
+        @{ double psi = Model.Tire[0].MaxPSI;
             double diff = 0.0;
 
             while (psi > 1)

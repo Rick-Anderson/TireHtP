@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TireHtP.Models;
+using TireHtP.Pages.TireHt;
 
-namespace TireHtP.Pages.TireHt
+namespace TireHtP.Pages
 {
     public class IndexModel : TireBaseModel
     {
@@ -40,7 +41,7 @@ namespace TireHtP.Pages.TireHt
             var tires = new Tire[]
             {
                 new Tire {
-                    Model = "Toyo OC",
+                    Model = "Toyo Open Country",
                     Height = 37.0,
                     Width = 14.5,
                     WheelDiameter = 17.0,
@@ -48,7 +49,7 @@ namespace TireHtP.Pages.TireHt
                     Weight = 1110,
                     SessionID = GetSessionID()
                 },
-                new Tire {             
+                new Tire {
                     Model = "KO2",
                     Height = 36.5,
                     Width = 12.5,
