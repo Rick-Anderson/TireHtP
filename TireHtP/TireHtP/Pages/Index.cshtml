@@ -91,7 +91,7 @@
         @{ double psi = Model.Tire[0].MaxPSI;
             double diff = 0.0;
 
-            while (psi > 1)
+            while (psi >= 2)
             {
                 <tr>
 
@@ -101,26 +101,30 @@
                     @foreach (var item in Model.Tire)
                     {
 
-                        <td>
-                            @{
-                                var b = item.Weight / psi / item.Width / 2.0;
-                                var lift = Math.Round(Math.Sqrt(item.Height * item.Height / 4.0 - b * b), 2);
-                                diff = Math.Round(item.Height / 2.0 - lift, 2);
+                    <td>
+                        @{
+                            var lift = Methods.Lift(item.Height, item.Weight, psi, item.Width);
+                            diff = Math.Round(item.Height / 2.0 - lift, 2);
 
-                                // dynLift use 3 times static weight. 3*3 == 9;
-                                var dynLift = Math.Round(Math.Sqrt(item.Height * item.Height / 4.0 - b * b * 9), 2);
-                                var dynDiff = Math.Round(item.Height / 2.0 - dynLift, 2);
-                                string str_dynDiff = dynDiff.ToString();
-                                string str_dynLift = (dynLift > (item.WheelDiameter / 2.0 - .5) || dynLift.ToString().Equals("NaN") != true)
-                                    ? dynLift.ToString() : "Rim";
+                            // dynLift use 3 times static weight. 3*3 == 9;
+                            var dynLift = Methods.Lift(item.Height, item.Weight * 3, psi, item.Width);
+                            var dynDiff = Math.Round(item.Height / 2.0 - dynLift, 2);
 
-                                if (str_dynLift.Equals("Rim"))
-                                {
-                                    str_dynDiff = "X";
-                                }
-                            }
-                            @lift (@diff) : @str_dynLift (@str_dynDiff)
-                        </td>
+                            var stat = Methods.StrLiftAndDiff(diff, lift, item.WheelDiameter);
+                            var dyn = Methods.StrLiftAndDiff(dynDiff, dynLift, item.WheelDiameter);
+
+                            //string str_dynDiff = dynDiff.ToString();
+                            //string str_dynLift = (dynLift > (item.WheelDiameter / 2.0 - .5) || dynLift.ToString().Equals("NaN") != true)
+                            //    ? dynLift.ToString() : "Rim";
+
+                            //if (str_dynLift.Equals("Rim"))
+                            //{
+                            //    str_dynDiff = "X";
+                            //}
+                        }
+                        @stat.Item1 (@stat.Item2) @dyn.Item1 (@dyn.Item2)
+                        @*@lift (@diff) : @str_dynLift (@str_dynDiff)*@
+                    </td>
 
                     }
                 </tr>

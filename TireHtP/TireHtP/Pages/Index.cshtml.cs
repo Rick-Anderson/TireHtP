@@ -50,9 +50,9 @@ namespace TireHtP.Pages
                     SessionID = GetSessionID()
                 },
                  new Tire {
-                    Model = "Generic",
-                    Height = 37,
-                    Width = 12.5,
+                    Model = "SST PRO",
+                    Height = 36.77,
+                    Width = 10.2,
                     WheelDiameter = 17.0,
                     MaxPSI=36.0,
                     Weight = 1110,
