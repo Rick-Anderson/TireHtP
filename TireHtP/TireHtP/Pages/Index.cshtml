@@ -113,16 +113,9 @@
                             var stat = Methods.StrLiftAndDiff(diff, lift, item.WheelDiameter);
                             var dyn = Methods.StrLiftAndDiff(dynDiff, dynLift, item.WheelDiameter);
 
-                            //string str_dynDiff = dynDiff.ToString();
-                            //string str_dynLift = (dynLift > (item.WheelDiameter / 2.0 - .5) || dynLift.ToString().Equals("NaN") != true)
-                            //    ? dynLift.ToString() : "Rim";
 
-                            //if (str_dynLift.Equals("Rim"))
-                            //{
-                            //    str_dynDiff = "X";
-                            //}
                         }
-                        @stat.Item1 (@stat.Item2) @dyn.Item1 (@dyn.Item2)
+                        @stat.strLift (@stat.strDiff) @dyn.strLift (@dyn.strDiff)
                         @*@lift (@diff) : @str_dynLift (@str_dynDiff)*@
                     </td>
 
@@ -141,5 +134,3 @@
     </tbody>
 
 </table>
-
-
