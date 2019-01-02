@@ -79,7 +79,7 @@
             {
                 var maxHt = item.Height / 2.0;
                 <th>
-                    @item.Height X @item.Width (Static:Dynamic)
+                    @item.Height X @item.Width
                 </th>
             }
         </tr>
@@ -89,8 +89,7 @@
 
 
         @{ double psi = Model.Tire[0].MaxPSI;
-            double diff = 0.0;
-
+            double diff = 0;
             while (psi >= 2)
             {
                 <tr>
@@ -101,27 +100,19 @@
                     @foreach (var item in Model.Tire)
                     {
 
-                    <td>
-                        @{
-                            var lift = Methods.Lift(item.Height, item.Weight, psi, item.Width);
-                            diff = Math.Round(item.Height / 2.0 - lift, 2);
+                        <td>
+                            @{
+                                var staticLoad = Methods.LiftAndDiff(item.Height, item.Weight, psi, item.Width, item.WheelDiameter);
+                                var dynamicLoad = Methods.LiftAndDiff(item.Height, item.Weight * 3.0, psi, item.Width, item.WheelDiameter);
+                                diff = staticLoad.diff;
+                            }
 
-                            // dynLift use 3 times static weight. 3*3 == 9;
-                            var dynLift = Methods.Lift(item.Height, item.Weight * 3, psi, item.Width);
-                            var dynDiff = Math.Round(item.Height / 2.0 - dynLift, 2);
-
-                            var stat = Methods.StrLiftAndDiff(diff, lift, item.WheelDiameter);
-                            var dyn = Methods.StrLiftAndDiff(dynDiff, dynLift, item.WheelDiameter);
-
-
-                        }
-                        @stat.strLift (@stat.strDiff) @dyn.strLift (@dyn.strDiff)
-                        @*@lift (@diff) : @str_dynLift (@str_dynDiff)*@
-                    </td>
+                            @staticLoad.lift (@staticLoad.strDiff) @dynamicLoad.lift (@dynamicLoad.strDiff)
+                        </td>
 
                     }
                 </tr>
-                if (@diff < .1)
+                if (diff < .1)
                 {
                     psi -= 3.0;
                 }

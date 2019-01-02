@@ -15,20 +15,16 @@ namespace TireHtP
             return Weight / PSI / Width / 2.0;
         }
 
-        //public static Tuple<string, string> StrLiftAndDiff(double Diff, double Lift, double WheelDiameter)
-        //{
-        //    string str_Diff = Diff.ToString();
-        //    string str_Lift = (Lift > (WheelDiameter / 2.0 - .5) || Lift.ToString().Equals("NaN") != true)
-        //        ? Lift.ToString() : "Rim";
+        public static (string lift, string strDiff, double diff) LiftAndDiff(double Height, double Weight, double PSI, double Width, 
+            double WheelDiameter)
+        {
+            var lift = Methods.Lift(Height, Weight, PSI, Width);
+            var diff = Math.Round(Height / 2.0 - lift, 2);
 
-        //    if (str_Lift.Equals("Rim"))
-        //    {
-        //        str_Diff = "X";
-        //    }
-        //    return Tuple.Create(str_Lift, str_Diff);
-        //}
+            return StrLiftAndDiff(diff, lift, WheelDiameter);
+        }
 
-        public static (string strLift, string strDiff) StrLiftAndDiff(double Diff, double Lift, double WheelDiameter)
+        public static (string strLift, string strDiff, double diff) StrLiftAndDiff(double Diff, double Lift, double WheelDiameter)
         {
             string str_Diff = Diff.ToString();
             string str_Lift = (Lift > (WheelDiameter / 2.0 - .5) || Lift.ToString().Equals("NaN") != true)
@@ -38,8 +34,7 @@ namespace TireHtP
             {
                 str_Diff = "X";
             }
-            return (str_Lift, str_Diff);
+            return (str_Lift, str_Diff, Diff);
         }
-
     }
 }
