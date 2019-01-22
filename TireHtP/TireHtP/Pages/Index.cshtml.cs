@@ -45,7 +45,7 @@ namespace TireHtP.Pages
                     Height = 37.0,
                     Width = 14.5,
                     WheelDiameter = 17.0,
-                    MaxPSI=3.0,
+                    MaxPSI = 36.0,
                     Weight = 1110,
                     SessionID = GetSessionID()
                 },
