@@ -66,8 +66,8 @@
     </tbody>
 </table>
 
-<h2> Axle Height vs. PSI </h2>
-<h3> static lift (drop): Dynamic lift (drop)</h3>
+<h2> Axle Height vs. PSI  [PL] is Patch Length </h2>
+<h3> static lift (drop) [PL] : Dynamic lift (drop) [PL] </h3>
 
 <table class="table">
 
@@ -89,7 +89,7 @@
 
 
         @{ double psi = Model.Tire[0].MaxPSI;
-            double diff = 0;
+            double diff=0;
             while (psi >= 2)
             {
                 <tr>
@@ -100,18 +100,19 @@
                     @foreach (var item in Model.Tire)
                     {
 
-                        <td>
-                            @{
-                                var staticLoad = Methods.LiftAndDiff(item.Height, item.Weight, psi, item.Width, item.WheelDiameter);
-                                var dynamicLoad = Methods.LiftAndDiff(item.Height, item.Weight * 3.0, psi, item.Width, item.WheelDiameter);
-                                diff = staticLoad.diff;
-                            }
-
-                            @staticLoad.lift (@staticLoad.strDiff) @dynamicLoad.lift (@dynamicLoad.strDiff)
-                        </td>
+                    <td>
+                        @{
+                            var staticLoad = Methods.LiftAndDiff(item.Height, item.Weight, psi, item.Width, item.WheelDiameter);
+                            var dynamicLoad = Methods.LiftAndDiff(item.Height, item.Weight * 3.0, psi, item.Width, item.WheelDiameter);
+                            diff = staticLoad.diff;
+                        }
+                        @staticLoad.lift (@staticLoad.strDiff) [@staticLoad.patchLen] :
+                        @dynamicLoad.lift (@dynamicLoad.strDiff) [@dynamicLoad.patchLen]
+                    </td>
 
                     }
                 </tr>
+                
                 if (diff < .1)
                 {
                     psi -= 3.0;
