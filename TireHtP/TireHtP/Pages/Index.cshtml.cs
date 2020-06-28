@@ -34,6 +34,12 @@ namespace TireHtP.Pages
             }
 
             Tire = await tires.ToListAsync();
+
+            if (!HttpContext.Request.Host.ToString().Contains("www"))
+            {
+                Response.Redirect("https://www.bt39.com/");
+                return;
+            }
         }
 
         private void AddTires()
