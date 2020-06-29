@@ -35,10 +35,14 @@ namespace TireHtP.Pages
 
             Tire = await tires.ToListAsync();
 
-            if (!HttpContext.Request.Host.ToString().Contains("www"))
+            var host = HttpContext.Request.Host.ToString();
+
+            if (host.Contains("localhost"))
             {
-                Response.Redirect("https://www.bt39.com/");
                 return;
+            }
+            else if (!host.Contains("www")) {
+                Response.Redirect("https://www.bt39.com/");
             }
         }
 
