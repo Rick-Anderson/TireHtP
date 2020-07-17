@@ -37,13 +37,13 @@ namespace TireHtP.Pages
 
             var host = HttpContext.Request.Host.ToString();
 
-            if (host.Contains("localhost"))
-            {
-                return;
-            }
-            else if (!host.Contains("www")) {
-                Response.Redirect("https://www.bt39.com/");
-            }
+            //if (host.Contains("localhost"))
+            //{
+            //    return;
+            //}
+            //else if (!host.Contains("www")) {
+            //    Response.Redirect("https://www.bt39.com/");
+            //}
         }
 
         private void AddTires()
