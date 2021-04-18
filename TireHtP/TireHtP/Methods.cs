@@ -24,13 +24,18 @@ namespace TireHtP
             return PatchLength(Weight, PSI, Width) / 2;
         }
 
+        public static string PatchArea(double Weight, double PSI)
+        {
+            return string.Format("{0:0.0}", Weight/PSI);
+        }
+
         public static (string lift,  string strDiff, double diff, string patchLen) 
             LiftAndDiff(double Height, double Weight, double PSI, double Width,  double WheelDiameter)
         {
             var lift = Lift(Height, Weight, PSI, Width);
             var diff = Math.Round(Height / 2.0 - lift, 2);
             //string patchLen = (2 * B(Weight, PSI, Weight)).ToString();
-            string patchLen = string.Format("{0:0.00}", PatchLength(Weight, PSI, Width));
+            string patchLen = string.Format("{0:0.0}", PatchLength(Weight, PSI, Width));
             return StrLiftAndDiff(diff, lift, WheelDiameter, patchLen);
         }
 
@@ -48,11 +53,20 @@ namespace TireHtP
             }
             return (str_Lift, str_Diff, Diff, PatchLen);
         }
+
+            public static (string lift, string strDiff, double diff, string patchLen,  string sfootPrint)
+            LiftAndDiffPA(double Height, double Weight, double PSI, double Width, double WheelDiameter)
+        {
+            var lift = Lift(Height, Weight, PSI, Width);
+            var diff = Math.Round(Height / 2.0 - lift, 2);
+            var liftdiff = Methods.LiftAndDiff(Height, Weight, PSI, Width, WheelDiameter);
+
+            return (liftdiff.lift, liftdiff.strDiff, diff, liftdiff.patchLen, PatchArea(Weight, PSI));
+        }
     }
 }
 
 /*
-
          , - ~ ~ ~ - ,
      , '               ' ,
    ,                       ,

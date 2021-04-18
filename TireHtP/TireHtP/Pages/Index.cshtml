@@ -66,8 +66,8 @@
     </tbody>
 </table>
 
-<h2> Axle Height vs. PSI  [PL] is Patch Length </h2>
-<h3> static lift (drop) [PL] : Dynamic lift (drop) [PL] </h3>
+<h2> Axle Height vs. PSI  [PL] is Patch Length {patch size in square inches} </h2>
+<h3> static lift (drop) [PL]{patch size} : Dynamic lift (drop) [PL] {patch size}</h3>
 
 <table class="table">
 
@@ -100,15 +100,15 @@
                     @foreach (var item in Model.Tire)
                     {
 
-                    <td>
-                        @{
-                            var staticLoad = Methods.LiftAndDiff(item.Height, item.Weight, psi, item.Width, item.WheelDiameter);
-                            var dynamicLoad = Methods.LiftAndDiff(item.Height, item.Weight * 3.0, psi, item.Width, item.WheelDiameter);
-                            diff = staticLoad.diff;
-                        }
-                        @staticLoad.lift (@staticLoad.strDiff) [@staticLoad.patchLen] :
-                        @dynamicLoad.lift (@dynamicLoad.strDiff) [@dynamicLoad.patchLen]
-                    </td>
+                <td>
+                    @{
+                        var staticLoad = Methods.LiftAndDiffPA(item.Height, item.Weight, psi, item.Width, item.WheelDiameter);
+                        var dynamicLoad = Methods.LiftAndDiffPA(item.Height, item.Weight * 3.0, psi, item.Width, item.WheelDiameter);
+                        diff = staticLoad.diff;
+                    }
+                    @staticLoad.lift (@staticLoad.strDiff) [@staticLoad.patchLen] {@staticLoad.sfootPrint}:
+                    @dynamicLoad.lift (@dynamicLoad.strDiff) [@dynamicLoad.patchLen] {@dynamicLoad.sfootPrint}
+                </td>
 
                     }
                 </tr>
