@@ -103,7 +103,7 @@
                 <td>
                     @{
                         var staticLoad = Methods.LiftAndDiffPA(item.Height, item.Weight, psi, item.Width, item.WheelDiameter);
-                        var dynamicLoad = Methods.LiftAndDiffPA(item.Height, item.Weight * 3.0, psi, item.Width, item.WheelDiameter);
+                        var dynamicLoad = Methods.LiftAndDiffPA(item.Height, item.Weight * Model.DynMult, psi, item.Width, item.WheelDiameter);
                         diff = staticLoad.diff;
                     }
                     @staticLoad.lift (@staticLoad.strDiff) [@staticLoad.patchLen] {@staticLoad.sfootPrint}:

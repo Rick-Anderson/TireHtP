@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,17 @@ namespace TireHtP.Pages
     public class IndexModel : TireBaseModel
     {
         private readonly TireHtP.Models.TireHtPContext _context;
+        private readonly IConfiguration Configuration;
 
-        public IndexModel(TireHtPContext context)
+        public IndexModel(TireHtPContext context, IConfiguration configuration)
         {
             _context = context;
+            Configuration = configuration;
         }
 
         public IList<Tire> Tire { get; set; }
+        public double DynMult { get; set; }
+
 
         public async Task OnGetAsync()
         {
@@ -35,7 +40,9 @@ namespace TireHtP.Pages
 
             Tire = await tires.ToListAsync();
 
-            var host = HttpContext.Request.Host.ToString();
+            DynMult = Convert.ToDouble(Configuration["DynamicMultiplier"] ?? "2.5");
+
+            // var host = HttpContext.Request.Host.ToString();
 
             //if (host.Contains("localhost"))
             //{

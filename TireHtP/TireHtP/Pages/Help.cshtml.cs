@@ -1,14 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
+using System;
 
 namespace TireHtP.Pages
 {
     public class HelpModel : PageModel
     {
+        private readonly IConfiguration Configuration;
+        public double DynMult { get; set; }
+
+        public HelpModel(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         public void OnGet()
         {
             double Width = 14.5;
@@ -17,6 +22,8 @@ namespace TireHtP.Pages
 
             var pl = Methods.PatchLength(Weight, PSI, Width);
             var diff = pl - 25.287356321839081;
+
+            DynMult = Convert.ToDouble(Configuration["DynamicMultiplier"] ?? "2.5");
 
             ViewData["diff"] = diff;
         }
