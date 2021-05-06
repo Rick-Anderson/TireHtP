@@ -53,6 +53,11 @@ namespace TireHtP.Pages
             //}
         }
 
+        private double GetWeight()
+        {
+            return Convert.ToDouble(Configuration["Weight"] ?? "1200");
+        }
+
         private void AddTires()
         {
             var tires = new Tire[]
@@ -63,7 +68,7 @@ namespace TireHtP.Pages
                     Width = 14.5,
                     WheelDiameter = 17.0,
                     MaxPSI = 36.0,
-                    Weight = 1110,
+                    Weight = GetWeight(),
                     SessionID = GetSessionID()
                 },
                  new Tire {
@@ -72,7 +77,7 @@ namespace TireHtP.Pages
                     Width = 10.2,
                     WheelDiameter = 17.0,
                     MaxPSI=36.0,
-                    Weight = 1110,
+                    Weight = GetWeight(),
                     SessionID = GetSessionID()
                 }
                 // ,
@@ -82,7 +87,7 @@ namespace TireHtP.Pages
                 //    Width = 12.5,
                 //    WheelDiameter = 17.0,
                 //    MaxPSI=36.0,
-                //    Weight = 1110,
+                //    Weight = GetWeight(),
                 //    SessionID = GetSessionID()
                 //}
                 //,
