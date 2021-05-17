@@ -46,7 +46,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                 {
                     Model = "JLR-a",
                      DiffRatio = 4.1,
-                      RPM = 5500,
+                      RPM = 4500,
                        TireDiameter = 31.5,
                         XferRatio = 4,
                          first = 4.71,
@@ -66,7 +66,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                 {
                     Model = "JLR-a",
                      DiffRatio = 5.38,
-                      RPM = 5500,
+                      RPM = 4500,
                        TireDiameter = 41.8,
                         XferRatio = 4,
                          first = 4.71,
@@ -86,7 +86,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                 {
                     Model = "JL-a",
                      DiffRatio = 4.1,
-                      RPM = 5500,
+                      RPM = 4500,
                        TireDiameter = 31.5,
                         XferRatio = 2.72,
                          first = 4.71,
