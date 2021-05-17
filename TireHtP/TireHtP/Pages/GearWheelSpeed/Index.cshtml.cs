@@ -61,6 +61,46 @@ namespace TireHtP.Pages.GearWheelSpeed
                          tenth = 0,
                          reverse = 3.53,
                     SessionID = GetSessionID()
+                },
+                new Car
+                {
+                    Model = "JLR-a",
+                     DiffRatio = 5.38,
+                      RPM = 5500,
+                       TireDiameter = 41.8,
+                        XferRatio = 4,
+                         first = 4.71,
+                         second = 3.13,
+                         third = 2.1,
+                         forth = 1.67,
+                         fifth = 1.28,
+                         sixth = 1,
+                         seventh = .84,
+                         eigth = .69,
+                         nineth = 0,
+                         tenth = 0,
+                         reverse = 3.53,
+                    SessionID = GetSessionID()
+                },
+                new Car
+                {
+                    Model = "JL-a",
+                     DiffRatio = 4.1,
+                      RPM = 5500,
+                       TireDiameter = 31.5,
+                        XferRatio = 2.72,
+                         first = 4.71,
+                         second = 3.13,
+                         third = 2.1,
+                         forth = 1.67,
+                         fifth = 1.28,
+                         sixth = 1,
+                         seventh = .84,
+                         eigth = .69,
+                         nineth = 0,
+                         tenth = 0,
+                         reverse = 3.53,
+                    SessionID = GetSessionID()
                 }
             };
 
