@@ -141,9 +141,9 @@
                     @Html.DisplayFor(modelItem => item.XferRatio)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> @* |
+        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a> *@
                 </td>
             </tr>
             // Speed calc high range
@@ -266,6 +266,7 @@
                 </td>
 
             </tr>
+            <tr> <td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> next </td></tr>
         }
     </tbody>
 </table>
