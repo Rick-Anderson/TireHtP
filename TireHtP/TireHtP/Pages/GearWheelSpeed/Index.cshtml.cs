@@ -35,7 +35,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                 AddCars();
             }
 
-            Car = await _context.Car.ToListAsync();
+            Car = await cars.ToListAsync();
         }
 
         private void AddCars()
