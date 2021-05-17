@@ -1,0 +1,271 @@
+﻿@page
+@model TireHtP.Pages.GearWheelSpeed.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].TireDiameter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].RPM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].first)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].second)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].third)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].forth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].fifth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].sixth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].seventh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].eigth)
+            </th>
+
+            @{ if (Model.Car[0].nineth > 0)
+                {
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car[0].nineth)
+                    </th>
+                }
+            }
+
+            @{ if (Model.Car[0].tenth > 0)
+                {
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car[0].tenth)
+                    </th>
+                }
+            }
+
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].reverse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].DiffRatio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].XferRatio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Car)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TireDiameter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RPM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.first)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.second)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.third)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.forth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fifth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sixth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.seventh)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.eigth)
+                </td>
+
+                @{ if (item.nineth > 0)
+                    {
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nineth)
+                        </td>
+                    }
+                }
+
+                @{ if (item.tenth > 0)
+                    {
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tenth)
+                        </td>
+                    }
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.reverse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiffRatio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.XferRatio)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+            // Speed calc high range
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    Hi Range
+                </td>
+                <td>
+                    Speed
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.first, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.second, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.third, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.forth, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.fifth, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.sixth, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.seventh, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.eigth, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+
+                @{ if (item.nineth > 0)
+                    {
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nineth)
+                        </td>
+                    }
+                }
+
+                @{ if (item.tenth > 0)
+                    {
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tenth)
+                        </td>
+                    }
+                }
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.reverse, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+
+            </tr>
+
+            /// Low Range
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                   LO: @Html.DisplayFor(modelItem => item.XferRatio)
+
+                </td>
+                <td>
+                    Speed
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.first, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.second, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.third, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.forth, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.fifth, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.sixth, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                </td>
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.seventh, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                </td>
+
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.eigth, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                </td>
+
+                @{ if (item.nineth > 0)
+                    {
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nineth)
+                        </td>
+                    }
+                }
+
+                @{ if (item.tenth > 0)
+                    {
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tenth)
+                        </td>
+                    }
+                }
+                <td>
+                    @SpeedCalc.MPH(item.RPM, item.reverse, item.DiffRatio, 1.0, item.TireDiameter)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

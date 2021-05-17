@@ -1,0 +1,114 @@
+﻿@page
+@model TireHtP.Pages.GearWheelSpeed.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Car</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Car.Model" class="control-label"></label>
+                <input asp-for="Car.Model" class="form-control" />
+                <span asp-validation-for="Car.Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.SessionID" class="control-label"></label>
+                <input asp-for="Car.SessionID" class="form-control" />
+                <span asp-validation-for="Car.SessionID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.TireDiameter" class="control-label"></label>
+                <input asp-for="Car.TireDiameter" class="form-control" />
+                <span asp-validation-for="Car.TireDiameter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.RPM" class="control-label"></label>
+                <input asp-for="Car.RPM" class="form-control" />
+                <span asp-validation-for="Car.RPM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.first" class="control-label"></label>
+                <input asp-for="Car.first" class="form-control" />
+                <span asp-validation-for="Car.first" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.second" class="control-label"></label>
+                <input asp-for="Car.second" class="form-control" />
+                <span asp-validation-for="Car.second" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.third" class="control-label"></label>
+                <input asp-for="Car.third" class="form-control" />
+                <span asp-validation-for="Car.third" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.forth" class="control-label"></label>
+                <input asp-for="Car.forth" class="form-control" />
+                <span asp-validation-for="Car.forth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.fifth" class="control-label"></label>
+                <input asp-for="Car.fifth" class="form-control" />
+                <span asp-validation-for="Car.fifth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.sixth" class="control-label"></label>
+                <input asp-for="Car.sixth" class="form-control" />
+                <span asp-validation-for="Car.sixth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.seventh" class="control-label"></label>
+                <input asp-for="Car.seventh" class="form-control" />
+                <span asp-validation-for="Car.seventh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.eigth" class="control-label"></label>
+                <input asp-for="Car.eigth" class="form-control" />
+                <span asp-validation-for="Car.eigth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.nineth" class="control-label"></label>
+                <input asp-for="Car.nineth" class="form-control" />
+                <span asp-validation-for="Car.nineth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.tenth" class="control-label"></label>
+                <input asp-for="Car.tenth" class="form-control" />
+                <span asp-validation-for="Car.tenth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.reverse" class="control-label"></label>
+                <input asp-for="Car.reverse" class="form-control" />
+                <span asp-validation-for="Car.reverse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.DiffRatio" class="control-label"></label>
+                <input asp-for="Car.DiffRatio" class="form-control" />
+                <span asp-validation-for="Car.DiffRatio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.XferRatio" class="control-label"></label>
+                <input asp-for="Car.XferRatio" class="form-control" />
+                <span asp-validation-for="Car.XferRatio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

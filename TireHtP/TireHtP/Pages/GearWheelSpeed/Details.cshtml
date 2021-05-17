@@ -1,0 +1,121 @@
+﻿@page
+@model TireHtP.Pages.GearWheelSpeed.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.SessionID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.SessionID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.TireDiameter)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.TireDiameter)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.RPM)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.RPM)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.first)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.first)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.second)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.second)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.third)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.third)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.forth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.forth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.fifth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.fifth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.sixth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.sixth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.seventh)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.seventh)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.eigth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.eigth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.nineth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.nineth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.tenth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.tenth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.reverse)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.reverse)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.DiffRatio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.DiffRatio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.XferRatio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.XferRatio)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Car.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
