@@ -59,7 +59,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                          eigth = .69,
                          nineth = 0,
                          tenth = 0,
-                         reverse = 3.53,
+                         reverse = -3.53,
                     SessionID = GetSessionID()
                 },
                 new Car
@@ -79,7 +79,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                          eigth = .69,
                          nineth = 0,
                          tenth = 0,
-                         reverse = 3.53,
+                         reverse = -3.53,
                     SessionID = GetSessionID()
                 },
                 new Car
@@ -99,7 +99,47 @@ namespace TireHtP.Pages.GearWheelSpeed
                          eigth = .69,
                          nineth = 0,
                          tenth = 0,
-                         reverse = 3.53,
+                         reverse = -3.53,
+                    SessionID = GetSessionID()
+                },
+                new Car
+                {
+                    Model = "JL-a",
+                     DiffRatio = 4.88,
+                      RPM = 4500,
+                       TireDiameter = 37,
+                        XferRatio = 4.1,
+                         first = 4.71,
+                         second = 3.13,
+                         third = 2.1,
+                         forth = 1.67,
+                         fifth = 1.28,
+                         sixth = 1,
+                         seventh = .84,
+                         eigth = .69,
+                         nineth = 0,
+                         tenth = 0,
+                         reverse = -3.53,
+                    SessionID = GetSessionID()
+                },
+                new Car
+                {
+                    Model = "JLR-6sp",
+                     DiffRatio = 4.1,
+                      RPM = 4500,
+                       TireDiameter = 31.5,
+                        XferRatio = 4,
+                         first = 5.13,
+                         second = 2.63,
+                         third = 1.53,
+                         forth = 1,
+                         fifth = .81,
+                         sixth = .72,
+                         seventh = 0,
+                         eigth = 0,
+                         nineth = 0,
+                         tenth = 0,
+                         reverse = -4.49,
                     SessionID = GetSessionID()
                 }
             };
