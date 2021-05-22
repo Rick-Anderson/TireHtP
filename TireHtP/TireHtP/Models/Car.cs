@@ -3,26 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TireHtP.Models
 {
-    public class Car1
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
-        public string Model { get; set; }
-
-        public string SessionID { get; set; }
-
-        [Display(Name = "Tire Diameter")]
-        public double TireDiameter { get; set; }
-        public double RPM { get; set; }
-        public double[] TransRatio;
-        public double DiffRatio { get; set; }
-        public double XferRatio { get; set; }
-    }
     public class Car
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
         public string Model { get; set; }
+        public string ModelShort { get; set; }
 
         public string SessionID { get; set; }
 
@@ -44,3 +30,15 @@ namespace TireHtP.Models
         public double XferRatio { get; set; }
     }
 }
+
+
+/*  Computed field
+         [Display(Name = "ModelS:Diff")]
+        public string MSwd
+        {
+            get
+            {
+                return ModelShort + ":" + DiffRatio.ToString();
+            }
+        }
+*/

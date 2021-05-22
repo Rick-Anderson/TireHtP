@@ -44,9 +44,10 @@ namespace TireHtP.Pages.GearWheelSpeed
             {
                 new Car
                 {
-                    Model = "JLR-a",
+                    Model = "JLR-auto",
+                    ModelShort = "JLR-a",
                      DiffRatio = 4.1,
-                      RPM = 4500,
+                      RPM = 5000,
                        TireDiameter = 31.5,
                         XferRatio = 4,
                          first = 4.71,
@@ -64,9 +65,10 @@ namespace TireHtP.Pages.GearWheelSpeed
                 },
                 new Car
                 {
-                    Model = "JLR-a",
+                    Model = "JLR-auto",
+                     ModelShort = "JLR-a",
                      DiffRatio = 5.38,
-                      RPM = 4500,
+                      RPM = 5000,
                        TireDiameter = 41.8,
                         XferRatio = 4,
                          first = 4.71,
@@ -84,9 +86,10 @@ namespace TireHtP.Pages.GearWheelSpeed
                 },
                 new Car
                 {
-                    Model = "JL-a",
-                     DiffRatio = 4.1,
-                      RPM = 4500,
+                    Model = "JL-auto",
+                     ModelShort = "JL-a",
+                     DiffRatio = 3.45,
+                      RPM = 5000,
                        TireDiameter = 31.5,
                         XferRatio = 2.72,
                          first = 4.71,
@@ -104,11 +107,12 @@ namespace TireHtP.Pages.GearWheelSpeed
                 },
                 new Car
                 {
-                    Model = "JL-a",
+                    Model = "JLR-auto",
+                     ModelShort = "JLR-a",
                      DiffRatio = 4.88,
-                      RPM = 4500,
+                      RPM = 5000,
                        TireDiameter = 37,
-                        XferRatio = 4.1,
+                        XferRatio = 4,
                          first = 4.71,
                          second = 3.13,
                          third = 2.1,
@@ -124,9 +128,10 @@ namespace TireHtP.Pages.GearWheelSpeed
                 },
                 new Car
                 {
-                    Model = "JLR-6sp",
+                   Model = "JLR-6sp",
+                    ModelShort = "JLR-6",
                      DiffRatio = 4.1,
-                      RPM = 4500,
+                      RPM = 5000,
                        TireDiameter = 31.5,
                         XferRatio = 4,
                          first = 5.13,
