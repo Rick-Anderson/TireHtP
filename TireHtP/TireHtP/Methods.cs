@@ -2,6 +2,7 @@
 
 namespace TireHtP
 {
+
     public static class Methods
     {
         public static double Lift(double Height, double Weight, double PSI, double Width)
@@ -67,7 +68,7 @@ namespace TireHtP
 
     public static class SpeedCalc
     {
-        public static string  MPH(double RPM, double TransRatio, double DiffRatio, double XferRatio,
+        public static string MPH(double RPM, double TransRatio, double DiffRatio, double XferRatio,
                                  double TireDiameter)
         {
             var three36 = 60.0 / 63360.0 * Math.PI;         // Really 1/336 rounded.
@@ -77,21 +78,21 @@ namespace TireHtP
 }
 
 /*
-         , - ~ ~ ~ - ,
-     , '               ' ,
-   ,                       ,
-  ,                         ,
- ,                           ,
- ,            /|             ,
- ,  Height /   |            ,
-  ,      /     |Lift        ,
-   ,   /       |           ,
-     ,------B------------ '
-       ' - , _ _ _ ,  '
+     , - ~ ~ ~ - ,
+ , '               ' ,
+,                       ,
+,                         ,
+,                           ,
+,            /|             ,
+,  Height /   |            ,
+,      /     |Lift        ,
+,   /       |           ,
+ ,------B------------ '
+   ' - , _ _ _ ,  '
 */
 
 /*
 =((($B$2/(B11*$C$6))*$E$2*PI())*60)/63360
 
 MPH = (((RPM/(gearRatio*diffRatio*transRatio)*tireDiameter*PI)*60/63360;
- * */
+* */
