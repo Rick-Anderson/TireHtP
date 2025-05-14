@@ -1,0 +1,73 @@
+﻿@page
+@model TireHtP.Pages.ECR.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TECR</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TECR.SessionID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TECR.SessionID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TECR.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TECR.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TECR.First)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TECR.First)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TECR.TC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TECR.TC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TECR.diff)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TECR.diff)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TECR.Portal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TECR.Portal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TECR.TireRadius)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TECR.TireRadius)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TECR.Tq)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TECR.Tq)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TECR.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TECR.Weight)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TECR.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,74 @@
+﻿@page
+@model TireHtP.Pages.ECR.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TECR</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TECR.SessionID" class="control-label"></label>
+                <input asp-for="TECR.SessionID" class="form-control" />
+                <span asp-validation-for="TECR.SessionID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TECR.Name" class="control-label"></label>
+                <input asp-for="TECR.Name" class="form-control" />
+                <span asp-validation-for="TECR.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TECR.First" class="control-label"></label>
+                <input asp-for="TECR.First" class="form-control" />
+                <span asp-validation-for="TECR.First" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TECR.TC" class="control-label"></label>
+                <input asp-for="TECR.TC" class="form-control" />
+                <span asp-validation-for="TECR.TC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TECR.diff" class="control-label"></label>
+                <input asp-for="TECR.diff" class="form-control" />
+                <span asp-validation-for="TECR.diff" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TECR.Portal" class="control-label"></label>
+                <input asp-for="TECR.Portal" class="form-control" />
+                <span asp-validation-for="TECR.Portal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TECR.TireRadius" class="control-label"></label>
+                <input asp-for="TECR.TireRadius" class="form-control" />
+                <span asp-validation-for="TECR.TireRadius" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TECR.Tq" class="control-label"></label>
+                <input asp-for="TECR.Tq" class="form-control" />
+                <span asp-validation-for="TECR.Tq" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TECR.Weight" class="control-label"></label>
+                <input asp-for="TECR.Weight" class="form-control" />
+                <span asp-validation-for="TECR.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

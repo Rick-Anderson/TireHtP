@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TireHtP.Models;
 
 namespace TireHtP.Models
 {
@@ -12,5 +13,6 @@ namespace TireHtP.Models
         public DbSet<TireHtP.Models.Tire> Tire { get; set; }
 
         public DbSet<TireHtP.Models.Car> Car { get; set; }
+        public DbSet<TireHtP.Models.TECR> TECR { get; set; }
     }
 }
