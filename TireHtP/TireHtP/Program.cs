@@ -21,22 +21,20 @@ builder.Services.AddDbContext<TireHtPContext>(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-else
+if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
 app.UseRouting();
-app.UseAuthorization();
+
+app.MapStaticAssets();
 app.UseSession();
 
-app.MapRazorPages();
+app.MapRazorPages()
+   .WithStaticAssets();
+
 app.Run();
