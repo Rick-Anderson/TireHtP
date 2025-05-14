@@ -24,7 +24,7 @@ namespace TireHtP.Pages.ECR
         }
 
         [BindProperty]
-        public TECR TECR { get; set; }
+        public Tecr TECR { get; set; }
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -34,7 +34,7 @@ namespace TireHtP.Pages.ECR
                 return Page();
             }
 
-            _context.TECR.Add(TECR);
+            _context.Tecr.Add(TECR);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -18,7 +18,7 @@ namespace TireHtP.Pages.ECR
             _context = context;
         }
 
-        public TECR TECR { get; set; }
+        public Tecr TECR { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -27,7 +27,7 @@ namespace TireHtP.Pages.ECR
                 return NotFound();
             }
 
-            TECR = await _context.TECR.FirstOrDefaultAsync(m => m.Id == id);
+            TECR = await _context.Tecr.FirstOrDefaultAsync(m => m.Id == id);
 
             if (TECR == null)
             {

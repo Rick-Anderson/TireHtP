@@ -14,37 +14,37 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TECR[0].SessionID)
+                @Html.DisplayNameFor(model => model.tecrList[0].SessionID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TECR[0].Name)
+                @Html.DisplayNameFor(model => model.tecrList[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TECR[0].First)
+                @Html.DisplayNameFor(model => model.tecrList[0].First)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TECR[0].TC)
+                @Html.DisplayNameFor(model => model.tecrList[0].TC)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TECR[0].diff)
+                @Html.DisplayNameFor(model => model.tecrList[0].diff)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TECR[0].Portal)
+                @Html.DisplayNameFor(model => model.tecrList[0].Portal)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TECR[0].TireRadius)
+                @Html.DisplayNameFor(model => model.tecrList[0].TireRadius)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TECR[0].Tq)
+                @Html.DisplayNameFor(model => model.tecrList[0].Tq)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TECR[0].Weight)
+                @Html.DisplayNameFor(model => model.tecrList[0].Weight)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.TECR) {
+@foreach (var item in Model.tecrList) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.SessionID)
