@@ -14,9 +14,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.tecrList[0].SessionID)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.tecrList[0].Name)
             </th>
             <th>
@@ -46,9 +43,6 @@
     <tbody>
 @foreach (var item in Model.tecrList) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SessionID)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

@@ -75,6 +75,13 @@ namespace TireHtP
             return (three36 * RPM * TireDiameter / TransRatio / XferRatio / DiffRatio).ToString("0.0");
         }
     }
+    public static class ECR
+    {
+        public static string CR(double first, double tc, double diff)
+        {
+            return (first + tc * diff).ToString("0.0");
+        }
+    }
 }
 
 /*

@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TireHtP.Models;
 using TireHtP.Pages.TireHt;
-using System.Linq;
 
 namespace TireHtP.Pages.ECR
 {
@@ -43,18 +42,49 @@ namespace TireHtP.Pages.ECR
         {
             var tecr = new Tecr[]
             {
-                new Tecr
-                {
-                    Name = "Name",
+                new() {
+                    Name = "JHF-TF904",
                     diff = 5.38,
-                    First = 2.1,
-                    Portal = 1.2,
+                    First = 2.74,
+                    Portal = 1.92,
                     TC = 2.62,
                     TireRadius = 42.9,
-                    Tq = 2000,
+                    Tq = 260,
                     Weight = 3800,
                     SessionID = GetSessionID()
-
+                },
+                new() {
+                    Name = "LJR-RubiCrawler",
+                    diff = 5.38,
+                    First = 2.84,
+                    Portal = 2.0,
+                    TC = 4.0,
+                    TireRadius = 42.9,
+                    Tq = 230,
+                    Weight = 6300,
+                    SessionID = GetSessionID()
+                },
+                 new() {
+                    Name = "LJR",
+                    diff = 5.38,
+                    First = 2.84,
+                    Portal = 1.0,
+                    TC = 4.0,
+                    TireRadius = 42.9,
+                    Tq = 230,
+                    Weight = 6300,
+                    SessionID = GetSessionID()
+                },
+                new() {
+                    Name = "JLR",
+                    diff = 4.1,
+                    First = 2.84,
+                    Portal = 1.0,
+                    TC = 4.0,
+                    TireRadius = 38.0,
+                    Tq = 275,
+                    Weight = 4700,
+                    SessionID = GetSessionID()
                 }
             };
 
