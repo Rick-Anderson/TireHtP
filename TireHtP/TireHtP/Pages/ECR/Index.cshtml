@@ -101,35 +101,26 @@
             </th>
         </tr>
     </thead>
-</table>
-
-@*         Now all the CR data *@
-
-<table>
     <tbody>
-
-
-        @*  CR Tr Tq Wt  *@
-
-@foreach (var item in Model.Tecr)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @ECRx.CR(item.First, item.TC, item.Portal, item.diff)
-        </td>
+        @foreach (var item in Model.Tecr)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @ECRx.CR(item.First, item.TC, item.Portal, item.diff)
+                </td>
                 <td>
                     @ECRx.TCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius)
                 </td>
                 <td>
-                    @ECRx.TqTCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius,item.Tq)
+                    @ECRx.TqTCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius, item.Tq)
                 </td>
                 <td>
                     @ECRx.TqTwtCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius, item.Tq, item.Weight)
                 </td>
-    </tr>
-}
+            </tr>
+        }
     </tbody>
 </table>
