@@ -77,11 +77,27 @@ namespace TireHtP
     }
     public static class ECR
     {
-        public static string CR(double first, double tc, double diff)
+        public static string CR(double first, double tc, double portal, double diff)
         {
-            return (first + tc * diff).ToString("0.0");
+            return (first + tc * portal * diff).ToString("0.0");
+        }
+
+        public static string TCR(double first, double tc, double portal, double diff, double tireRadius)
+        {
+            return (first + tc * portal * diff / tireRadius).ToString("0.0");
+        }
+
+        public static string TqTCR(double first, double tc, double portal, double diff, double tireRadius, double tq)
+        {
+            return (first + tc * portal * diff / tireRadius * tq).ToString("0.0");
+        }
+
+        public static string TqTwtCR(double first, double tc, double portal, double diff, double tireRadius, double tq, double wt)
+        {
+            return (first + tc * portal * diff / tireRadius * tq / wt).ToString("0.0");
         }
     }
+
 }
 
 /*

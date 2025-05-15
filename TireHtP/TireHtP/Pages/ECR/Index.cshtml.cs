@@ -20,7 +20,7 @@ namespace TireHtP.Pages.ECR
             Configuration = configuration;
         }
 
-        public IList<Tecr> tecrList { get; set; }
+        public IList<Tecr> Tecr { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -35,7 +35,7 @@ namespace TireHtP.Pages.ECR
                 AddCRs();
             }
 
-            tecrList = await crVals.ToListAsync();
+            Tecr = await crVals.ToListAsync();
         }
 
         private void AddCRs()
