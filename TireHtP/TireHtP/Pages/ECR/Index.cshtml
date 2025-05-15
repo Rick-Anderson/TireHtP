@@ -79,7 +79,7 @@
 </table>
 
 
-@*  Tr Tq Wt CR *@
+@*  CR Tr Tq Wt CR *@
 
 <table class="table">
     <thead>
@@ -109,6 +109,7 @@
     <tbody>
 
 
+        @*  CR Tr Tq Wt  *@
 
 @foreach (var item in Model.Tecr)
 {
@@ -119,6 +120,15 @@
         <td>
             @ECRx.CR(item.First, item.TC, item.Portal, item.diff)
         </td>
+                <td>
+                    @ECRx.TCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius)
+                </td>
+                <td>
+                    @ECRx.TqTCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius,item.Tq)
+                </td>
+                <td>
+                    @ECRx.TqTwtCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius, item.Tq, item.Weight)
+                </td>
     </tr>
 }
     </tbody>
