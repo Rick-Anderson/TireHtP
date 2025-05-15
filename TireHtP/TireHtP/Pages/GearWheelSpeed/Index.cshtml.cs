@@ -43,8 +43,27 @@ namespace TireHtP.Pages.GearWheelSpeed
         {
             var cars = new Car[]
             {
-            new Car
-            {
+                new() {
+                Model = "JHF-904",
+                ModelShort = "JHF",
+                 DiffRatio = 5.38*1.92,
+                  RPM = 5000,
+                   TireDiameter = 42.9,
+                    XferRatio = 2.62,
+                     first = 2.74,
+                     second = 1.54,
+                     third = 1.0,
+                     forth = 0.0,
+                     fifth = 0.0,
+                     sixth = 0.0,
+                     seventh = 0.0,
+                     eigth = 0.0,
+                     nineth = 0,
+                     tenth = 0,
+                     reverse = -2.03,
+                SessionID = GetSessionID()
+            },
+            new() {
                 Model = "JLR-auto",
                 ModelShort = "JLR-a",
                  DiffRatio = 4.1,
@@ -64,7 +83,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                      reverse = -3.53,
                 SessionID = GetSessionID()
             },
-            new Car
+            new() 
             {
                 Model = "JLR-38",
                  ModelShort = "JL38",
@@ -85,7 +104,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                      reverse = -3.53,
                 SessionID = GetSessionID()
             },
-             new Car
+             new() 
             {
                Model = "LJR",
                 ModelShort = "LJR",
@@ -106,7 +125,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                      reverse = -2.21,
                 SessionID = GetSessionID()
             },
-            new Car
+            new() 
             {
                 Model = "JL-auto",
                  ModelShort = "JL-a",
@@ -127,7 +146,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                      reverse = -3.53,
                 SessionID = GetSessionID()
             },
-            new Car
+            new() 
             {
                 Model = "XR",
                  ModelShort = "XR",
@@ -148,7 +167,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                      reverse = -3.53,
                 SessionID = GetSessionID()
             },
-            new Car
+            new() 
             {
                Model = "JLR-6sp",
                 ModelShort = "JLR-6",

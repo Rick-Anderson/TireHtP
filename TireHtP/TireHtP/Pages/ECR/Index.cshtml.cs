@@ -78,7 +78,7 @@ namespace TireHtP.Pages.ECR
                 new() {
                     Name = "JLR",
                     diff = 4.1,
-                    First = 2.84,
+                    First = 4.71,
                     Portal = 1.0,
                     TC = 4.0,
                     TireRadius = 38.0,

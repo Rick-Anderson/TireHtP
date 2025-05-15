@@ -79,22 +79,22 @@ namespace TireHtP
     {
         public static string CR(double first, double tc, double portal, double diff)
         {
-            return (first + tc * portal * diff).ToString("0.0");
+            return (first *tc * portal * diff).ToString("0.0");
         }
 
         public static string TCR(double first, double tc, double portal, double diff, double tireRadius)
         {
-            return (first + tc * portal * diff / tireRadius).ToString("0.0");
+            return (first *tc * portal * diff / tireRadius/2.0).ToString("0.00");
         }
 
         public static string TqTCR(double first, double tc, double portal, double diff, double tireRadius, double tq)
         {
-            return (first + tc * portal * diff / tireRadius * tq).ToString("0.0");
+            return (first *tc * portal * diff / tireRadius/2.0 * tq).ToString("0.0");
         }
 
         public static string TqTwtCR(double first, double tc, double portal, double diff, double tireRadius, double tq, double wt)
         {
-            return (first + tc * portal * diff / tireRadius * tq / wt).ToString("0.0");
+            return (first *tc * portal * diff / tireRadius/2.0/2.0 * tq / wt * 1000.0).ToString("0.0");
         }
     }
 
