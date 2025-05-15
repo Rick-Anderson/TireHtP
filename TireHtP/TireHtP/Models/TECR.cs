@@ -15,6 +15,7 @@ namespace TireHtP.Models
         public double TC { get; set; }
         public double diff { get; set; }
         public double Portal { get; set; }
+        [Display(Name = "Tire Radius")]
         public double TireRadius { get; set; }
         public double Tq { get; set; }
         public double Weight { get; set; }
