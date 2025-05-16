@@ -30,27 +30,21 @@
             <th>
                 @Html.DisplayNameFor(model => model.Car[0].XferRatio)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].PortalRatio)
+            </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Car)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Model)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TireDiameter)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RPM)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DiffRatio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.XferRatio)
-                </td>
+                <td>@Html.DisplayFor(modelItem => item.Model)</td>
+                <td>@Html.DisplayFor(modelItem => item.TireDiameter)</td>
+                <td>@Html.DisplayFor(modelItem => item.RPM)</td>
+                <td>@Html.DisplayFor(modelItem => item.DiffRatio)</td>
+                <td>@Html.DisplayFor(modelItem => item.XferRatio)</td>
+                <td>@Html.DisplayFor(modelItem => item.PortalRatio)</td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>  |
                     <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
@@ -241,19 +235,19 @@
                     Hi Range
                 </td>
                 <td>
-                    @SpeedCalc.MPH(item.RPM, item.first, item.DiffRatio, 1.0, item.TireDiameter)
+                    @SpeedCalc.MPH(item.RPM, item.first, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                 </td>
                 <td>
-                    @SpeedCalc.MPH(item.RPM, item.second, item.DiffRatio, 1.0, item.TireDiameter)
+                    @SpeedCalc.MPH(item.RPM, item.second, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                 </td>
                 <td>
-                    @SpeedCalc.MPH(item.RPM, item.third, item.DiffRatio, 1.0, item.TireDiameter)
+                    @SpeedCalc.MPH(item.RPM, item.third, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                 </td>
                 @{
                     if (item.forth > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.forth, item.DiffRatio,1.0, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.forth, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -261,7 +255,7 @@
                     if (item.fifth > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.fifth, item.DiffRatio,1.0, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.fifth, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -269,7 +263,7 @@
                     if (item.sixth > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.sixth, item.DiffRatio,1.0, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.sixth, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -277,7 +271,7 @@
                     if (item.seventh > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.seventh, item.DiffRatio, 1.0, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.seventh, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -285,7 +279,7 @@
                     if (item.eigth > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.eigth, item.DiffRatio, 1.0, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.eigth, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -295,7 +289,8 @@
                     {
 
                         <td>
-                            @Html.DisplayFor(modelItem => item.nineth)
+                           @SpeedCalc.MPH(item.RPM, item.nineth, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
+
                         </td>
                     }
                 }
@@ -305,12 +300,12 @@
                     {
 
                         <td>
-                            @Html.DisplayFor(modelItem => item.tenth)
+                            @SpeedCalc.MPH(item.RPM, item.tenth, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
                 <td>
-                    @SpeedCalc.MPH(item.RPM, item.reverse, item.DiffRatio, 1.0, item.TireDiameter)
+                    @SpeedCalc.MPH(item.RPM, item.reverse, item.DiffRatio, 1.0, item.TireDiameter, item.PortalRatio)
                 </td>
 
             </tr>
@@ -326,19 +321,19 @@
 
                 </td>
                 <td>
-                    @SpeedCalc.MPH(item.RPM, item.first, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                    @SpeedCalc.MPH(item.RPM, item.first, item.DiffRatio, item.XferRatio, item.TireDiameter, item.PortalRatio)
                 </td>
                 <td>
-                    @SpeedCalc.MPH(item.RPM, item.second, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                    @SpeedCalc.MPH(item.RPM, item.second, item.DiffRatio, item.XferRatio, item.TireDiameter, item.PortalRatio)
                 </td>
                 <td>
-                    @SpeedCalc.MPH(item.RPM, item.third, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                    @SpeedCalc.MPH(item.RPM, item.third, item.DiffRatio, item.XferRatio, item.TireDiameter, item.PortalRatio)
                 </td>
                 @{
                     if (item.forth > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.forth, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.forth, item.DiffRatio, item.XferRatio, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -346,7 +341,7 @@
                     if (item.fifth > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.fifth, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.fifth, item.DiffRatio, item.XferRatio, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -354,7 +349,7 @@
                     if (item.sixth > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.sixth, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.sixth, item.DiffRatio, item.XferRatio, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -362,7 +357,7 @@
                     if (item.seventh > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.seventh, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.seventh, item.DiffRatio, item.XferRatio, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -370,7 +365,7 @@
                     if (item.eigth > 0)
                     {
                         <td>
-                            @SpeedCalc.MPH(item.RPM, item.eigth, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                            @SpeedCalc.MPH(item.RPM, item.eigth, item.DiffRatio, item.XferRatio, item.TireDiameter, item.PortalRatio)
                         </td>
                     }
                 }
@@ -394,7 +389,7 @@
                     }
                 }
                 <td>
-                    @SpeedCalc.MPH(item.RPM, item.reverse, item.DiffRatio, item.XferRatio, item.TireDiameter)
+                    @SpeedCalc.MPH(item.RPM, item.reverse, item.DiffRatio, item.XferRatio, item.TireDiameter, item.PortalRatio)
                 </td>
 
             </tr>

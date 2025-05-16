@@ -28,6 +28,8 @@ namespace TireHtP.Models
         public double reverse { get; set; }
         public double DiffRatio { get; set; }
         public double XferRatio { get; set; }
+        public double PortalRatio { get; set; }
+
     }
 }
 

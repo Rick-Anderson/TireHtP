@@ -69,10 +69,10 @@ namespace TireHtP
     public static class SpeedCalc
     {
         public static string MPH(double RPM, double TransRatio, double DiffRatio, double XferRatio,
-                                 double TireDiameter)
+                                 double TireDiameter, double PortalRatio)
         {
             var three36 = 60.0 / 63360.0 * Math.PI;         // Really 1/336 rounded.
-            return (three36 * RPM * TireDiameter / TransRatio / XferRatio / DiffRatio).ToString("0.0");
+            return (three36 * RPM * TireDiameter / TransRatio / XferRatio / DiffRatio/ PortalRatio).ToString("0.0");
         }
     }
     public static class ECRx
@@ -94,7 +94,7 @@ namespace TireHtP
 
         public static string TqTwtCR(double first, double tc, double portal, double diff, double tireRadius, double tq, double wt)
         {
-            return (first *tc * portal * diff / tireRadius/2.0/2.0 * tq / wt * 1000.0).ToString("0.0");
+            return (first *tc * portal * diff / tireRadius/2.0 * tq / wt * 1000.0).ToString("0.0");
         }
     }
 
