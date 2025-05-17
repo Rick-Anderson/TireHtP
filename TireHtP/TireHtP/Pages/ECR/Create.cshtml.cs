@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using TireHtP.Models;
+using TireHtP.Pages.TireHt;
 
 namespace TireHtP.Pages.ECR
 {
-    public class CreateModel : PageModel
+    public class CreateModel : TireBaseModel
     {
         private readonly TireHtP.Models.TireHtPContext _context;
 
@@ -34,6 +35,7 @@ namespace TireHtP.Pages.ECR
                 return Page();
             }
 
+            TECR.SessionID = GetSessionID();
             _context.Tecr.Add(TECR);
             await _context.SaveChangesAsync();
 
