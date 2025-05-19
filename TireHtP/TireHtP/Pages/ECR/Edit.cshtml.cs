@@ -65,7 +65,7 @@ namespace TireHtP.Pages.ECR
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./ECR/Index");
         }
 
         private bool TECRExists(string id)

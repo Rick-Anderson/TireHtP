@@ -65,7 +65,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./GearWheelSpeed/Index");
         }
 
         private bool CarExists(string id)
