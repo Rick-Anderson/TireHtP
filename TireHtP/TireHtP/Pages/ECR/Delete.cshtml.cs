@@ -52,7 +52,7 @@ namespace TireHtP.Pages.ECR
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./GearWheelSpeed/Index");
+            return RedirectToPage("./Index");
         }
     }
 }

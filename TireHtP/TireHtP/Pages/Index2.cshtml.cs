@@ -10,12 +10,12 @@ using TireHtP.Pages.TireHt;
 
 namespace TireHtP.Pages
 {
-    public class IndexModel : TireBaseModel
+    public class Index2Model : TireBaseModel
     {
         private readonly TireHtP.Models.TireHtPContext _context;
         private readonly IConfiguration Configuration;
 
-        public IndexModel(TireHtPContext context, IConfiguration configuration)
+        public Index2Model(TireHtPContext context, IConfiguration configuration)
         {
             _context = context;
             Configuration = configuration;

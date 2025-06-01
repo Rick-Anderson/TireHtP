@@ -47,7 +47,7 @@ namespace TireHtP.Pages
             _context.Tire.Add(Tire);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index2");
         }
     }
 }

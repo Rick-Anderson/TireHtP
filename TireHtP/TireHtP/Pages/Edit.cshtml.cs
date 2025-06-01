@@ -69,7 +69,7 @@ namespace TireHtP.Pages
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index2");
         }
 
         private bool TireExists(string id)
