@@ -14,6 +14,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="TECR.Id" />
+            <input type="hidden" asp-for="TECR.SessionID" />
             <div class="form-group">
                 <label asp-for="TECR.Name" class="control-label"></label>
                 <input asp-for="TECR.Name" class="form-control" />

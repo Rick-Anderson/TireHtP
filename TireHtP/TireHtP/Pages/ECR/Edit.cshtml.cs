@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TireHtP.Models;
+using TireHtP.Pages.TireHt;
 
 namespace TireHtP.Pages.ECR
 {
-    public class EditModel : PageModel
+    public class EditModel : TireBaseModel
     {
         private readonly TireHtP.Models.TireHtPContext _context;
 
@@ -65,7 +66,7 @@ namespace TireHtP.Pages.ECR
                 }
             }
 
-            return RedirectToPage("./ECR/Index");
+            return RedirectToPage("./Index");
         }
 
         private bool TECRExists(string id)

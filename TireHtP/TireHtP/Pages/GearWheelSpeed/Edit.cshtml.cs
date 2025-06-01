@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TireHtP.Models;
+using TireHtP.Pages.TireHt;
 
 namespace TireHtP.Pages.GearWheelSpeed
 {
-    public class EditModel : PageModel
+    public class EditModel : TireBaseModel
     {
         private readonly TireHtP.Models.TireHtPContext _context;
 
@@ -65,7 +66,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                 }
             }
 
-            return RedirectToPage("./GearWheelSpeed/Index");
+            return RedirectToPage("/GearWheelSpeed/Index");
         }
 
         private bool CarExists(string id)

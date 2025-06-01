@@ -38,10 +38,10 @@ app.UseSession();
 app.MapRazorPages()
    .WithStaticAssets();
 
-app.MapGet("/", context =>
-{
-    context.Response.Redirect("/ECR/Index");
-    return Task.CompletedTask;
-});
+//app.MapGet("/", context =>
+//{
+//    context.Response.Redirect("/ECR/Index");
+//    return Task.CompletedTask;
+//});
 
 app.Run();

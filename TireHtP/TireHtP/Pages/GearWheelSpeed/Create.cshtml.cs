@@ -6,10 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TireHtP.Models;
+using TireHtP.Pages.TireHt;
 
 namespace TireHtP.Pages.GearWheelSpeed
 {
-    public class CreateModel : PageModel
+    public class CreateModel : TireBaseModel
     {
         private readonly TireHtP.Models.TireHtPContext _context;
 
@@ -20,6 +21,27 @@ namespace TireHtP.Pages.GearWheelSpeed
 
         public IActionResult OnGet()
         {
+            Car = new Car
+            {
+                Model = "any",
+                ModelShort = "any",
+                TireDiameter = 35.0,
+                RPM = 1000,
+                first = 3.0,
+                second = 2.0,
+                third = 1.5,
+                forth = 1.2,
+                fifth = 1.0,
+                sixth = 0.8,
+                seventh = 0.7,
+                eigth = 0.6,
+                nineth = 0.5,
+                tenth = 0.4,
+                reverse = -3.0,
+                DiffRatio = 4.10,
+                XferRatio = 1.0,
+                PortalRatio = 1.0
+            };
             return Page();
         }
 
@@ -34,6 +56,8 @@ namespace TireHtP.Pages.GearWheelSpeed
             {
                 return Page();
             }
+
+            Car.SessionID = GetSessionID();
 
             _context.Car.Add(Car);
             await _context.SaveChangesAsync();

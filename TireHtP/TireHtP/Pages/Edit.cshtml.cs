@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TireHtP.Models;
+using TireHtP.Pages.TireHt;
 
 namespace TireHtP.Pages
 {
-    public class EditModel : PageModel
+    public class EditModel : TireBaseModel
     {
         private readonly TireHtP.Models.TireHtPContext _context;
 
@@ -45,6 +46,11 @@ namespace TireHtP.Pages
                 return Page();
             }
 
+            if (!_context.Tire.Any(e => e.Id == Tire.Id))
+            {
+                return NotFound();
+            }
+
             _context.Attach(Tire).State = EntityState.Modified;
 
             try
@@ -72,3 +78,4 @@ namespace TireHtP.Pages
         }
     }
 }
+
