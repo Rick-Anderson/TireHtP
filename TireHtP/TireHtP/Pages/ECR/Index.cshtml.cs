@@ -53,6 +53,17 @@ namespace TireHtP.Pages.ECR
                     Weight = 3800,
                     SessionID = GetSessionID()
                 },
+                 new() {
+                    Name = "JHF-3.73",
+                    diff = 3.73,
+                    First = 2.74,
+                    Portal = 1.92,
+                    TC = 4.0,
+                    TireRadius = 42.9,
+                    Tq = 260,
+                    Weight = 3800,
+                    SessionID = GetSessionID()
+                },
                 new() {
                     Name = "LJR-RubiCrawler",
                     diff = 5.38,
