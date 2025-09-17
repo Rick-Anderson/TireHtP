@@ -77,6 +77,36 @@ namespace TireHtP
     }
     public static class ECRx
     {
+        private static double BaseRatio(double first, double tc, double portal, double diff)
+            => first * tc * portal * diff;
+
+        public static string CR(double first, double tc, double portal, double diff)
+        {
+            return BaseRatio(first, tc, portal, diff).ToString("0.0");
+        }
+
+        public static string TireSz(double first, double tc, double portal, double diff, double tireSize)
+        {
+            return (BaseRatio(first, tc, portal, diff)
+                      / tireSize / 2.0).ToString("0.00");
+        }
+
+        public static string TqTrCR(double first, double tc, double portal, double diff, double tireSize, double tq)
+        {
+            return (BaseRatio(first, tc, portal, diff) / tireSize / 2.0
+                      * tq).ToString("0.0");
+        }
+
+        public static string TqTr_wtCR(double first, double tc, double portal, double diff, double tireSize, double tq, double wt)
+        {
+            return (BaseRatio(first, tc, portal, diff) / tireSize / 2.0 * tq 
+                     / wt * 1000.0).ToString("0.0");
+        }
+    }
+
+    /*
+    public static class ECRx
+    {
         // CR
         private static double BaseRatio(double first, double tc, double portal, double diff)
             => first * tc * portal * diff;
@@ -93,7 +123,7 @@ namespace TireHtP
         private static double WeightAdjusted(double torqueAdjusted, double wt)
             => torqueAdjusted / wt * 1000.0;
 
-        // Public API
+        // String API for Razor Pages
 
         public static string CR(double first, double tc, double portal, double diff)
             => BaseRatio(first, tc, portal, diff).ToString("0.0");
@@ -106,7 +136,7 @@ namespace TireHtP
 
         public static string TqTr_wtCR(double first, double tc, double portal, double diff, double tireSize, double tq, double wt)
             => WeightAdjusted(TorqueAdjusted(TireAdjusted(BaseRatio(first, tc, portal, diff), tireSize), tq), wt).ToString("0.0");
-    }
+    } */
 
 
 }
