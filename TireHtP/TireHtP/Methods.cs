@@ -77,26 +77,37 @@ namespace TireHtP
     }
     public static class ECRx
     {
+        // CR
+        private static double BaseRatio(double first, double tc, double portal, double diff)
+            => first * tc * portal * diff;
+
+        // Tire adjustment factor
+        private static double TireAdjusted(double baseRatio, double tireSize)
+            => baseRatio / (tireSize / 2.0);
+
+        // Previous + Torque adjustment
+        private static double TorqueAdjusted(double tireAdjusted, double tq)
+            => tireAdjusted * tq;
+
+        // Previous + Weight adjustment
+        private static double WeightAdjusted(double torqueAdjusted, double wt)
+            => torqueAdjusted / wt * 1000.0;
+
+        // Public API
+
         public static string CR(double first, double tc, double portal, double diff)
-        {
-            return (first *tc * portal * diff).ToString("0.0");
-        }
+            => BaseRatio(first, tc, portal, diff).ToString("0.0");
 
-        public static string TCR(double first, double tc, double portal, double diff, double tireRadius)
-        {
-            return (first *tc * portal * diff / tireRadius/2.0).ToString("0.00");
-        }
+        public static string TireSz(double first, double tc, double portal, double diff, double tireSize)
+            => TireAdjusted(BaseRatio(first, tc, portal, diff), tireSize).ToString("0.00");
 
-        public static string TqTCR(double first, double tc, double portal, double diff, double tireRadius, double tq)
-        {
-            return (first *tc * portal * diff / tireRadius/2.0 * tq).ToString("0.0");
-        }
+        public static string TqTrCR(double first, double tc, double portal, double diff, double tireSize, double tq)
+            => TorqueAdjusted(TireAdjusted(BaseRatio(first, tc, portal, diff), tireSize), tq).ToString("0.0");
 
-        public static string TqTwtCR(double first, double tc, double portal, double diff, double tireRadius, double tq, double wt)
-        {
-            return (first *tc * portal * diff / tireRadius/2.0 * tq / wt * 1000.0).ToString("0.0");
-        }
+        public static string TqTr_wtCR(double first, double tc, double portal, double diff, double tireSize, double tq, double wt)
+            => WeightAdjusted(TorqueAdjusted(TireAdjusted(BaseRatio(first, tc, portal, diff), tireSize), tq), wt).ToString("0.0");
     }
+
 
 }
 

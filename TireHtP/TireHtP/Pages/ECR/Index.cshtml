@@ -91,13 +91,13 @@
                 CR
             </th>
             <th>
-                Tire CR
+                + Tire
             </th>
             <th>
-                Tr Tq CR
+                + Tq
             </th>
             <th>
-                Tr Tq Wt/1000 CR
+                + Wt
             </th>
         </tr>
     </thead>
@@ -112,13 +112,13 @@
                     @ECRx.CR(item.First, item.TC, item.Portal, item.diff)
                 </td>
                 <td>
-                    @ECRx.TCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius)
+                    @ECRx.TireSz(item.First, item.TC, item.Portal, item.diff, item.TireRadius)
                 </td>
                 <td>
-                    @ECRx.TqTCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius, item.Tq)
+                    @ECRx.TqTrCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius, item.Tq)
                 </td>
                 <td>
-                    @ECRx.TqTwtCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius, item.Tq, item.Weight)
+                    @ECRx.TqTr_wtCR(item.First, item.TC, item.Portal, item.diff, item.TireRadius, item.Tq, item.Weight)
                 </td>
             </tr>
         }
