@@ -94,7 +94,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                     eigth = .69,
                     reverse = -3.53,
                     SessionID = GetSessionID()
-                },               
+                },
                 new() {
                     Model = "LJR",
                     ModelShort = "LJR",
@@ -147,6 +147,22 @@ namespace TireHtP.Pages.GearWheelSpeed
                     eigth = .69,
                     reverse = -3.53,
                     SessionID = GetSessionID()
+                },
+                new() {
+                     Model = "JK-2012-35s",
+                     ModelShort = "JK",
+                     DiffRatio = 3.73,
+                     RPM = 5000,
+                     TireDiameter = 34.5,
+                     XferRatio = 2.72,
+                     PortalRatio = 1,
+                     first = 3.59,
+                     second = 2.19,
+                     third = 1.41,
+                     forth = 1,
+                     fifth = 0.83,
+                     reverse = 3.16,
+                     SessionID = GetSessionID()
                 },
                 new() {
                     Model = "JLR-6sp",
