@@ -87,12 +87,34 @@ namespace TireHtP.Pages.ECR
                     SessionID = GetSessionID()
                 },
                 new() {
-                    Name = "JLR",
+                    Name = "JLR-38",
                     diff = 4.1,
                     First = 4.71,
                     Portal = 1.0,
                     TC = 4.0,
-                    TireRadius = 38.0,
+                    TireRadius = 37.5,
+                    Tq = 275,
+                    Weight = 4700,
+                    SessionID = GetSessionID()
+                },
+                new() {
+                    Name = "JLR-TC-3",
+                    diff = 5.38,
+                    First = 4.71,
+                    Portal = 1.0,
+                    TC = 3.0,
+                    TireRadius = 37.5,
+                    Tq = 275,
+                    Weight = 4700,
+                    SessionID = GetSessionID()
+                },
+                new() {
+                    Name = "JLR-stock",
+                    diff = 4.1,
+                    First = 4.71,
+                    Portal = 1.0,
+                    TC = 4.0,
+                    TireRadius = 32.5,
                     Tq = 275,
                     Weight = 4700,
                     SessionID = GetSessionID()

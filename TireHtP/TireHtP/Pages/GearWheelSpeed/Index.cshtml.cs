@@ -79,10 +79,10 @@ namespace TireHtP.Pages.GearWheelSpeed
                 new() {
                     Model = "JLR-38",
                     ModelShort = "JL38",
-                    DiffRatio = 4.1,
+                    DiffRatio = 5.38,
                     RPM = 5000,
                     TireDiameter = 37.5,
-                    XferRatio = 4,
+                    XferRatio = 3,
                     PortalRatio = 1,  // Added default
                     first = 4.71,
                     second = 3.13,
@@ -94,7 +94,7 @@ namespace TireHtP.Pages.GearWheelSpeed
                     eigth = .69,
                     reverse = -3.53,
                     SessionID = GetSessionID()
-                },
+                },               
                 new() {
                     Model = "LJR",
                     ModelShort = "LJR",
